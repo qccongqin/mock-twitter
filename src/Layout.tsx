@@ -5,6 +5,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import EmailIcon from "@mui/icons-material/Email";
+import BugReportIcon from "@mui/icons-material/BugReport";
 
 const links = [
   { label: "Home", href: "/home", icon: <HomeIcon />, value: "home" },
@@ -26,6 +27,12 @@ const links = [
     icon: <EmailIcon />,
     value: "messages",
   },
+  {
+    label: "Playground",
+    href: "/playground",
+    icon: <BugReportIcon />,
+    value: "playground",
+  },
 ];
 
 export default function Layout() {
@@ -36,10 +43,12 @@ export default function Layout() {
     <>
       <Outlet />
       <div className="fixed bottom-0 w-full">
-        <BottomNavigation showLabels value={selectedValue}>
+        <BottomNavigation showLabels={false} value={selectedValue}>
           {links.map((link) => (
             <BottomNavigationAction
-              label={link.label}
+              key={link.label}
+        
+              showLabel={false}
               to={link.href}
               value={link.value}
               component={Link}

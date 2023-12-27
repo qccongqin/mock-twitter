@@ -5,6 +5,8 @@ import Layout from "./Layout";
 import NotificationsPage from "./page/notifications/NotificationsPage";
 import MessagesPage from "./page/messages/MessagesPage";
 import TimeLineSetting from "./page/home/TimeLineSetting";
+import PlaygoundPage from "./page/playground/PlaygoundPage";
+import PlaygoundDetail from "./page/playground/PlaygoundDetail";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
       { path: "explore", Component: ExplorePage },
       { path: "notifications", Component: NotificationsPage },
       { path: "messages", Component: MessagesPage },
+      { path: "playground", Component: PlaygoundPage },
+      { path: "playground/:api", Component: PlaygoundDetail },
     ],
   },
   {
