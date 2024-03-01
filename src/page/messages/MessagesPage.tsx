@@ -1,3 +1,3 @@
-export default function MessagesPage(){
-    return <div>MessagesPage</div>
+export default function MessagesPage() {
+  return <div>MessagesPage</div>;
 }

@@ -1,43 +1,43 @@
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { Outlet, useLocation, useMatch } from "react-router-dom";
-import { Link } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import EmailIcon from "@mui/icons-material/Email";
-import BugReportIcon from "@mui/icons-material/BugReport";
+import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import EmailIcon from '@mui/icons-material/Email';
+import BugReportIcon from '@mui/icons-material/BugReport';
 
 const links = [
-  { label: "Home", href: "/home", icon: <HomeIcon />, value: "home" },
+  { label: 'Home', href: '/home', icon: <HomeIcon />, value: 'home' },
   {
-    label: "Explore",
-    href: "/explore",
+    label: 'Explore',
+    href: '/explore',
     icon: <SearchIcon />,
-    value: "explore",
+    value: 'explore',
   },
   {
-    label: "Notifications",
-    href: "/notifications",
+    label: 'Notifications',
+    href: '/notifications',
     icon: <NotificationsIcon />,
-    value: "notifications",
+    value: 'notifications',
   },
   {
-    label: "Messages",
-    href: "/messages",
+    label: 'Messages',
+    href: '/messages',
     icon: <EmailIcon />,
-    value: "messages",
+    value: 'messages',
   },
   {
-    label: "Playground",
-    href: "/playground",
+    label: 'Playground',
+    href: '/playground',
     icon: <BugReportIcon />,
-    value: "playground",
+    value: 'playground',
   },
 ];
 
 export default function Layout() {
   const location = useLocation();
-  const selectedValue = location.pathname.split("/")[1];
+  const selectedValue = location.pathname.split('/')[1];
 
   return (
     <>
@@ -47,7 +47,6 @@ export default function Layout() {
           {links.map((link) => (
             <BottomNavigationAction
               key={link.label}
-        
               showLabel={false}
               to={link.href}
               value={link.value}
