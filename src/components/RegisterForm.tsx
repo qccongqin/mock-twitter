@@ -33,7 +33,7 @@ export type RegisterSchemeType = z.infer<typeof registerScheme>;
 
 type RegisterFormProps = {
   // onRegister: (registerData: RegisterSchemeType) => void;
-  onRegister: SubmitHandler<RegisterSchemeType>
+  onRegister: SubmitHandler<RegisterSchemeType>;
 };
 export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
   console.log('>>>>>>>> RegisterForm rendering');
@@ -81,16 +81,14 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
 
   const myHandleSubmit: SubmitHandler<RegisterSchemeType> = (data) => {
     console.log('>>>>>> myHandleSubmit called');
-  
+
     console.log(data);
     // e.preventDefault();
   };
 
   return (
     <div className="mx-[10px] flex flex-col">
-      <form
-        className="mx-[10px] w-full  max-w-80 self-center"
-        onSubmit={handleSubmit(onRegister)}>
+      <form className="mx-[10px] w-full  max-w-80 self-center" onSubmit={handleSubmit(onRegister)}>
         <label className="block" htmlFor="first-name">
           First Name
         </label>

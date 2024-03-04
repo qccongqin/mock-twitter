@@ -6,10 +6,10 @@ export const RegisterPage = () => {
   const mutation = useRegister();
   const onRegister = (registerData: RegisterSchemeType) => {
     console.log(registerData);
-    mutation.mutate(registerData,{
-      onSuccess: (data) =>{
+    mutation.mutate(registerData, {
+      onSuccess: (data) => {
         console.log(data);
-      }
+      },
     });
   };
 
